@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero">
+    <p class="eyebrow">A simple MVC learning project</p>
+    <h1>Time, well kept.</h1>
+    <p class="hero-copy">
+        Welcome to Elite Watches. Browse the collection and manage the watch inventory
+        with a clear example of how an ASP.NET Core MVC app fits together.
+    </p>
+    <a class="button button-gold" asp-controller="Products" asp-action="Index">Explore the collection</a>
+</section>
+
+<section class="learning-section">
+    <div class="section-heading">
+        <p class="eyebrow">Inside this project</p>
+        <h2>MVC, one step at a time</h2>
+    </div>
+    <div class="learning-grid">
+        <article class="info-card">
+            <span class="step-number">01</span>
+            <h3>Model</h3>
+            <p><code>Product</code> describes a watch and validates its fields.</p>
+        </article>
+        <article class="info-card">
+            <span class="step-number">02</span>
+            <h3>View</h3>
+            <p>Razor pages display the collection and provide forms for each action.</p>
+        </article>
+        <article class="info-card">
+            <span class="step-number">03</span>
+            <h3>Controller</h3>
+            <p><code>ProductsController</code> handles requests and calls the repository.</p>
+        </article>
+    </div>
+    <p class="storage-note">The repository saves data to a local SQLite database using <code>Data/schema.sql</code>.</p>
+</section>

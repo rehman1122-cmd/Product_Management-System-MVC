@@ -1,0 +1,54 @@
+@model IReadOnlyList<Product>
+@{
+    ViewData["Title"] = "Watch collection";
+}
+
+<section class="page-heading page-heading-row">
+    <div>
+        <p class="eyebrow">The inventory</p>
+        <h1>Watch collection</h1>
+        <p>Browse, add, and manage the watches in the catalog.</p>
+    </div>
+    <a class="button button-gold" asp-action="Create">Add a watch</a>
+</section>
+
+@if (Model.Count == 0)
+{
+    <div class="empty-state">
+        <h2>No watches yet</h2>
+        <p>Add the first watch to get your collection started.</p>
+        <a class="button button-outline" asp-action="Create">Add a watch</a>
+    </div>
+}
+else
+{
+    <div class="table-wrap">
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Watch</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>In stock</th>
+                    <th><span class="visually-hidden">Actions</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td class="watch-name">@product.Name</td>
+                        <td>@product.Brand</td>
+                        <td>@product.Price.ToString("C2")</td>
+                        <td>@product.Stock</td>
+                        <td class="table-actions">
+                            <a asp-action="Details" asp-route-id="@product.Id">View</a>
+                            <a asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                            <a class="link-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

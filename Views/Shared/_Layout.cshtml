@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Elite Watches</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Main navigation">
+            <a class="brand" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark" aria-hidden="true">E</span>
+                <span>Elite Watches</span>
+            </a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Products" asp-action="Index">Watch collection</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container page-content">
+        @RenderBody()
+    </main>
+    <footer class="site-footer">
+        <div class="container">Elite Watches <span aria-hidden="true">·</span> ASP.NET Core MVC lab project</div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,18 @@
+@model Product
+@{
+    ViewData["Title"] = "Add a watch";
+}
+
+<section class="page-heading">
+    <p class="eyebrow">Watch collection</p>
+    <h1>Add a watch</h1>
+    <p>Enter the details below to add a watch to the inventory.</p>
+</section>
+
+<form asp-action="Create" method="post" class="editor-form">
+    <partial name="_ProductForm" model="Model" />
+    <div class="form-actions">
+        <button class="button button-gold" type="submit">Save watch</button>
+        <a class="button button-text" asp-action="Index">Cancel</a>
+    </div>
+</form>
